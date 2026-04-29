@@ -1,10 +1,19 @@
+import os
 import funciones
 
 # Probando las funciones
-resultado_suma = funciones.suma(10, 5)
-resultado_resta = funciones.resta(20, 8)
-resultado_mult = funciones.multiplicacion(4, 3)
+print("El resultado de la suma es:", funciones.suma(10, 5))
+print("El resultado de la resta es:", funciones.resta(20, 8))
 
-print("El resultado de la suma es:", resultado_suma)
-print("El resultado de la resta es:", resultado_resta)
-print("El resultado de la multiplicación es:", resultado_mult)
+# Generacin de la carpeta y los nuevos archivos
+if not os.path.exists("resultados"):
+    os.makedirs("resultados")
+
+# Simulamos la creacin de una imagen png y un archivo eps
+with open("resultados/grafica.png", "w") as f:
+    f.write("Simulacion de imagen PNG")
+    
+with open("resultados/diagrama.eps", "w") as f:
+    f.write("Simulacion de archivo EPS")
+
+print("¡Archivos generados exitosamente en la carpeta 'resultados'!")
